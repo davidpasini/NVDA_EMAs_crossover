@@ -1,12 +1,3 @@
-### LOG
-date | desc
---- | ---
-2020-12-10 | Repository creation and files upload
- | blog creation davidpasini@github.io<br>
-   GitHub profile README creation<br>
-2020-12-11 | README first draft<br>
-
-
 # NVDA_EMAs_crossover
 Trading algorithm that places long positions when price is above the baseline EMA and the fast EMA crosses over the slow EMA. Position exits on a series of stoploss indicators.
 
@@ -22,7 +13,7 @@ After playing around with several indicators, I took the approach of a deep lear
 
 
 ### ENTRY CONDITIONS
-Timeframe: 30T candles<br>
+**Timeframe: 30T candles**<br>
 Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-periods EMA) crosses over slow EMA (103-periods EMA)
 
 *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*<br><br>
