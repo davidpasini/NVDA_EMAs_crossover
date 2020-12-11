@@ -18,7 +18,7 @@ Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-peri
 
 > *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*
 
-<br><br>
+<br>
 ### EXIT CONDITIONS
 While a very fast EMA crossover a very slow EMA often guarantees a trend inversion, when the inverse inversion (pardon the pun) happens, it is often already to late to abandon the trade then. A stoploss sistem had to be implemente but I came to realize that though a trailing stop loss already would help, there would often be situations in which it would back the strategy, exiting prematurely the trades when the trend was still strong (if too stringent). Repeating the same deep learning approach, I came up with and tested the following stoplosses:
 condition | value | logic
