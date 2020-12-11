@@ -19,8 +19,10 @@ Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-peri
 > *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*
 
 <br>
+
 ### EXIT CONDITIONS
 While a very fast EMA crossover a very slow EMA often guarantees a trend inversion, when the inverse inversion (pardon the pun) happens, it is often already to late to abandon the trade then. A stoploss sistem had to be implemente but I came to realize that though a trailing stop loss already would help, there would often be situations in which it would back the strategy, exiting prematurely the trades when the trend was still strong (if too stringent). Repeating the same deep learning approach, I came up with and tested the following stoplosses:
+
 condition | value | logic
 --- | --- | ---
 EMA crossunder | 20/103 | The fast EMA crosses under the slow EMA
@@ -29,15 +31,13 @@ Buy Price | 5% | Stoploss price falls below 5% of the Buy price of the current p
 Open/Close | 1,2% | Stoploss if the price falls below the current candle Open by 1,2%
 Trailing | 3% | Trailing stoploss
 
-<br>
+
 While covid-19 was beginning to hit Europe and USA I also introduced a no-trades limiter using an ATR (200 smooting period) set to 2.0, a level of volatility that was only surpassed only once in the past for NVDA. Looking back at what happened after then, even though volatility increased even farter and the ATR reached 6, the strategy continued to produce without losing more than it's average.
 <br><br>
 
 
 # Strategy returns and KPIs
 ![](images/20162020_tradingview_NVDA_snapshot.jpg)
-
-<br><br>
 ![](images/20162020_tradingview_NVDA_kpis.jpg)
 
 
