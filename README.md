@@ -16,7 +16,7 @@ After playing around with several indicators, I took the approach of a deep lear
 **Timeframe: 30T candles**<br>
 Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-periods EMA) crosses over slow EMA (103-periods EMA)
 
-*The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*<br><br>
+> *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*<br><br>
 
 
 ### EXIT CONDITIONS
@@ -28,7 +28,11 @@ Previous Close | 1,4% | Stoploss if price falls below the previous Close by 1,4%
 Buy Price | 5% | Stoploss price falls below 5% of the Buy price of the current position
 Open/Close | 1,2% | Stoploss if the price falls below the current candle Open by 1,2%
 Trailing | 3% | Trailing stoploss
+
 <br><br>
+While covid-19 was beginning to hit Europe and USA I also introduced a no-trades limiter using an ATR (200 smooting period) set to 2.0, a level of volatility that was only surpassed only once in the past for NVDA. Looking back at what happened after then, even though volatility increased even farter and the ATR reached 6, the strategy continued to produce without losing more than it's average.
+<br><br>
+
 
 # Strategy returns
 <code>(TBC)</code>
