@@ -18,7 +18,7 @@ Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-peri
 
 > *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*
 
-<br>
+
 
 ### EXIT CONDITIONS
 While a very fast EMA crossover a very slow EMA often guarantees a trend inversion, when the inverse inversion (pardon the pun) happens, it is often already to late to abandon the trade then. A stoploss sistem had to be implemente but I came to realize that though a trailing stop loss already would help, there would often be situations in which it would back the strategy, exiting prematurely the trades when the trend was still strong (if too stringent). Repeating the same deep learning approach, I came up with and tested the following stoplosses:
@@ -47,5 +47,11 @@ The above returns are for the period 2016-1-1 to 2020-12-11. They average a 40% 
 - In live forward testing (For now I have only had one chance to test it forward), the current algorithm (as of 20201211) keeps checking on a minute basis the entry and exit conditions, as opposed to every bar candle close in backtesting. This has cause the algo in the forward test to fail as it kept jumping in an out of trades while the entry condition was being met but exiting because the minutely price fluctuations would immediately force exit (even though later the trend was strngly established.
 
 
-# Disclaimer
-<code>(TBC)</code>
+*NEXT STEP*: address the above issue and compare the forward test results from IB, Alpaca and FXCM (Blueshift replicates the same levels of TradingView in the backtest) with the backtest returns and calculate te impact of the fees broker's fees and costs on the strategy returns from TradingView to assess more effectively future strategies.
+
+Other future issues, ideas and current and future implementations of this project will be reported in the Issues, Discussions and Projects pages of this repository.
+
+# LEGAL DISCLAIMER
+'''
+The opinions expressed in the Blog are for general informational purposes only and are not intended to provide specific advice or recommendations for any individual or on any specific security or investment product. It is only intended to provide education about the financial industry.
+'''
