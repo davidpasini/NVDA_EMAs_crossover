@@ -52,6 +52,4 @@ The above returns are for the period 2016-1-1 to 2020-12-11. They average a 40% 
 Other future issues, ideas and current and future implementations of this project will be reported in the Issues, Discussions and Projects pages of this repository.
 
 # LEGAL DISCLAIMER
-```
-The opinions expressed in the Blog are for general informational purposes only and are not intended to provide specific advice or recommendations for any individual or on any specific security or investment product. It is only intended to provide education about the financial industry.
-```
+`The opinions expressed in the Blog are for general informational purposes only and are not intended to provide specific advice or recommendations for any individual or on any specific security or investment product. It is only intended to provide education about the financial industry.`
