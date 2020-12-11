@@ -7,7 +7,7 @@ Trading algorithm that places long positions when price is above the baseline EM
 # Strategy logic
 I have built this specific strategy as my first attempt at algo trading. The eureka moment came by while I was trying to predict breakouts on stock like TSLA, avoiding flse signals. The initial idea was to identify MAs positive crossover and wait x amount of bars to confirm the positive trend and breakout(`reconsider this idea for other trend-following strategies`). I switched to NVDA because I realized that that the extremely good returns I was getting on TSLA were only due to the hype on the stock and that the strategy was not statistically reliable due to the lack of sufficient data back in time for backtesting. I so chose NVDA, a good innovative yet oligopolistic older company with great products and active R&D.
 
-- insert excel screenshot here
+![](images/early_nml_tests.jpg)
 
 After playing around with several indicators, I took the approach of a deep learning model, i.e. test several indicators combinations and varying their levels, recording the strategy results (by hand in excel! :laughing:). Needless to say, loads of fun but eventually I determined what produced the best combinations and I proceed to overfitting. The inistial result on the curren year I was working was ~80% annual return (2019) and ~10% annual return the minimum a few years back. I was not formally aware of the concept of overfitting in ML (or of ML for that matter), but I realized I had to relax(normalize) the parameters, in a way that I could minimize the drawdowns in the worse years while being aware that this might reduce the gains in bullish moments. The following resulted:<br><br>
 
