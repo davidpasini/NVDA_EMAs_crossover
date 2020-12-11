@@ -1,3 +1,5 @@
+# iBridgePy NVDA_ema_xover strategy code
+
 # Imports
 # import pandas    
 # pandas.set_option('display.max_rows', None)
