@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Imports
 # import pandas    
 # pandas.set_option('display.max_rows', None)
