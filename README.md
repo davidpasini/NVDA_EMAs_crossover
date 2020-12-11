@@ -1,7 +1,9 @@
 ### LOG
-2020-12-10 Repository creation and files upload | blog creation davidpasini@github.io | GitHub profile README creation<br>
+2020-12-10  Repository creation and files upload<br>
+            blog creation davidpasini@github.io<br>
+            GitHub profile README creation<br>
 2020-12-11 README first draft<br>
-
+<br>
 
 # NVDA_EMAs_crossover
 Trading algorithm that places long positions when price is above the baseline EMA and the fast EMA crosses over the slow EMA. Position exits on a series of stoploss indicators.
@@ -14,14 +16,14 @@ I have built this specific strategy as my first attempt at algo trading. The eur
 
 - insert excel screenshot here
 
-After playing around with several indicators, I took the approach of a deep learning model, i.e. test several indicators combinations and varying their levels, recording the strategy results (by hand in excel! :laughing:). Needless to say, loads of fun but eventually I determined what produced the best combinations and I proceed to overfitting. The inistial result on the curren year I was working was ~80% annual return (2019) and ~10% annual return the minimum a few years back. I was not formally aware of the concept of overfitting in ML (or of ML for that matter), but I realized I had to relax(normalize) the parameters, in a way that I could minimize the drawdowns in the worse years while being aware that this might reduce the gains in bullish moments. The following resulted:<br>
+After playing around with several indicators, I took the approach of a deep learning model, i.e. test several indicators combinations and varying their levels, recording the strategy results (by hand in excel! :laughing:). Needless to say, loads of fun but eventually I determined what produced the best combinations and I proceed to overfitting. The inistial result on the curren year I was working was ~80% annual return (2019) and ~10% annual return the minimum a few years back. I was not formally aware of the concept of overfitting in ML (or of ML for that matter), but I realized I had to relax(normalize) the parameters, in a way that I could minimize the drawdowns in the worse years while being aware that this might reduce the gains in bullish moments. The following resulted:<br><br>
 
 
 ### ENTRY CONDITIONS
 Timeframe: 30T candles<br>
 Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-periods EMA) crosses over slow EMA (103-periods EMA)
 
-*The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*<br>
+*The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*<br><br>
 
 
 ### EXIT CONDITIONS
@@ -33,7 +35,7 @@ Previous Close | 1,4% | Stoploss if price falls below the previous Close by 1,4%
 Buy Price | 5% | Stoploss price falls below 5% of the Buy price of the current position
 Open/Close | 1,2% | Stoploss if the price falls below the current candle Open by 1,2%
 Trailing | 3% | Trailing stoploss
-
+<br><br>
 
 # Strategy returns
 <code>(TBC)</code>
