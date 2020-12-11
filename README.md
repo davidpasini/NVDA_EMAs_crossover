@@ -34,12 +34,17 @@ While covid-19 was beginning to hit Europe and USA I also introduced a no-trades
 <br><br>
 
 
-# Strategy returns
+# Strategy returns and KPIs
 ![](images/20162020_tradingview_NVDA_snapshot.jpg)
+
+<br><br>
+![](images/20162020_tradingview_NVDA_kpis.jpg)
 
 
 # Considerations
-<code>Write here the first forward-test experience</code>
+The above returns are for the period 2016-1-1 to 2020-12-11. They average a 40% annual return because of the normalization to reduce the drawdown risk during bad years. Though the results are exepional for a first attempt to algo trading, or trading in general, there are two considerations that always bothered me:
+- The above results are obtained through a sistem that does not consider the broker's spread and overnight fees costs.
+- In live forward testing (For now I have only had one chance to test it forward), the current algorithm (as of 20201211) keeps checking on a minute basis the entry and exit conditions, as opposed to every bar candle close in backtesting. This has cause the algo in the forward test to fail as it kept jumping in an out of trades while the entry condition was being met but exiting because the minutely price fluctuations would immediately force exit (even though later the trend was strngly established.
 
 
 # Disclaimer
