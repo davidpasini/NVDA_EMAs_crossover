@@ -1,9 +1,11 @@
 ### LOG
-2020-12-10  Repository creation and files upload<br>
-            blog creation davidpasini@github.io<br>
-            GitHub profile README creation<br>
-2020-12-11 README first draft<br>
-<br>
+date | desc
+--- | ---
+2020-12-10 | Repository creation and files upload
+ | blog creation davidpasini@github.io<br>
+   GitHub profile README creation<br>
+2020-12-11 | README first draft<br>
+
 
 # NVDA_EMAs_crossover
 Trading algorithm that places long positions when price is above the baseline EMA and the fast EMA crosses over the slow EMA. Position exits on a series of stoploss indicators.
