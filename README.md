@@ -35,7 +35,7 @@ While covid-19 was beginning to hit Europe and USA I also introduced a no-trades
 
 
 # Strategy returns
-<code>(TBC)</code>
+![](images/20162020_tradingview_NVDA_snapshot.jpg)
 
 
 # Considerations
