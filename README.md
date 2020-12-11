@@ -6,3 +6,7 @@ Trading algorithm that places long positions when price is above the baseline EM
 
 # Strategy returns
 <code>(TBC)</code>
+
+
+# Disclaimer
+<code>(TBC)</code>
