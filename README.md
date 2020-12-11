@@ -1,4 +1,4 @@
-#### LOG
+### LOG
 2020-12-10 Repository creation and files upload | blog creation davidpasini@github.io | GitHub profile README creation
 2020-12-11 README first draft
 
@@ -16,21 +16,25 @@ I have built this specific strategy as my first attempt at algo trading. The eur
 
 After playing around with several indicators, I took the approach of a deep learning model, i.e. test several indicators combinations and varying their levels, recording the strategy results (by hand in excel! :laughing:). Needless to say, loads of fun but eventually I determined what produced the best combinations and I proceed to overfitting. The inistial result on the curren year I was working was ~80% annual return (2019) and ~10% annual return the minimum a few years back. I was not formally aware of the concept of overfitting in ML (or of ML for that matter), but I realized I had to relax(normalize) the parameters, in a way that I could minimize the drawdowns in the worse years while being aware that this might reduce the gains in bullish moments. The following resulted
 
-Timeframe: 30T candles
+
 ### ENTRY CONDITIONS
+Timeframe: 30T candles
 Buy long when price is above 200-period EMA (Baseline EMA) and fast EMA (20-periods EMA) crosses over slow EMA (103-periods EMA)
 
 *The price above the baseline EMA assures that the stock is in a bullish phase, avoiding so taking trades while the ticker is bearish*
 
+
 ### EXIT CONDITIONS
 While a very fast EMA crossover a very slow EMA often guarantees a trend inversion, when the inverse inversion (pardon the pun) happens, it is often already to late to abandon the trade then. A stoploss sistem had to be implemente but I came to realize that though a trailing stop loss already would help, there would often be situations in which it would back the strategy, exiting prematurely the trades when the trend was still strong (if too stringent). Repeating the same deep learning approach, I came up with and tested the following stoplosses:
-name|value|logic
-Previous Close|1,4%|Stoploss if price falls below the previous Close by 1,4%
-Buy Price|5%|Stoploss price falls below 5% of the Buy price of the current position
-Open/Close|1,2%|Stoploss if the price falls below the current candle Open by 1,2%
-Trailing|3%|Trailing stoploss
+name | value | logic
+--- | --- | ---
+Previous Close | 1,4% | Stoploss if price falls below the previous Close by 1,4%
+Buy Price | 5% | Stoploss price falls below 5% of the Buy price of the current position
+Open/Close | 1,2% | Stoploss if the price falls below the current candle Open by 1,2%
+Trailing | 3% | Trailing stoploss
 
 The first exit condition remains the fast EMA crossing under the slow EMA
+
 
 # Strategy returns
 <code>(TBC)</code>
