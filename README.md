@@ -29,13 +29,17 @@ Buy Price | 5% | Stoploss price falls below 5% of the Buy price of the current p
 Open/Close | 1,2% | Stoploss if the price falls below the current candle Open by 1,2%
 Trailing | 3% | Trailing stoploss
 
-<br><br>
+<br>
 While covid-19 was beginning to hit Europe and USA I also introduced a no-trades limiter using an ATR (200 smooting period) set to 2.0, a level of volatility that was only surpassed only once in the past for NVDA. Looking back at what happened after then, even though volatility increased even farter and the ATR reached 6, the strategy continued to produce without losing more than it's average.
 <br><br>
 
 
 # Strategy returns
 <code>(TBC)</code>
+
+
+# Considerations
+<code>Write here the first forward-test experience</code>
 
 
 # Disclaimer
