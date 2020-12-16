@@ -7,7 +7,7 @@
     Asset class: Equities
     Dataset: NYSE Minute
 
-    LOG:
+    Last LOG:
     Added Trailing Stoploss logic
     
     To run live this script, comment all context.flag and uncomment the order placements
