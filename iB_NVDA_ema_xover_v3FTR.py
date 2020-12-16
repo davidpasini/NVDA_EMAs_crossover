@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+#To run live this script, comment all context.flag and uncomment the order placements
+
+# Note: this strategy is still nor viable for live deployment as the conditions 
+# are met several time within a single candle because they are checked every minute
+
+# Next improvement: have the script execute only every 30 minutes
 
 def initialize(context):
     context.flag = False
@@ -6,7 +12,7 @@ def initialize(context):
     context.params = {'pcsl':1-1.4*0.01,    # Previous Close SL
                       'bpsl':1-5*0.01,      # Buy Price SL
                       'ocsl':1-1.2*0.01,    # Open/Close SL
-                      'longTrailPerc':3*0.01,       # Trailing SL 
+                      'longTrailPerc':3*0.01,       # Trailing SL %
                       'longStopPrice':0.0,
                       'ep':0.0              # Variable for recording a position's entry price
                       }
@@ -15,31 +21,23 @@ def initialize(context):
      
 def handle_data(context, data):
     # fetch enough historical data to calculate EMAs
-    hist = request_historical_data(context.security, '30 mins', '349 D')
-    # print('\n\n', hist.head(10), '\n\n', hist.tail(10), '\n\n')
-    # print(hist['close'][-1])
+    hist = request_historical_data(context.security, '30 mins', '30 D')
     
-    # hist = request_historical_data(context.security, '1 min', '30 D')
-    
-    # print('checkpoin B')
     hist['ema_20'] = hist['close'].ewm(span=20, adjust=False).mean()
     hist['ema_103'] = hist['close'].ewm(span=103, adjust=False).mean()
     hist['ema_200'] = hist['close'].ewm(span=200, adjust=False).mean()
     
-    # print('\n\n', hist.head(10), '\n\n', hist.tail(10), '\n\n')
     
-    # Trailing Stoploss level calculation
     # if count_positions(context.security) > 0:
     if context.flag > 0:
         stopValue = hist['close'][-1] * (1 - context.params['longTrailPerc'])
         context.params['longStopPrice'] = max(stopValue, context.params['longStopPrice'])
     else:
         context.params['longStopPrice'] = 0
-    
-    
+        
+        
     # if count_positions(context.security) == 0:
     if context.flag == 0:
-        # print(hist.index[-1], " ", hist['close'][-1])
         if hist['close'][-1] > hist['ema_200'][-1] and hist['ema_20'][-1] > hist['ema_103'][-1] and hist['ema_20'][-2] <= hist['ema_103'][-1]:
             print(hist.index[-1], 'BUY! BUY! BUY!')
             # orderId = order_target_percent(context.security, 0.01)
@@ -47,8 +45,7 @@ def handle_data(context, data):
             context.flag = 1
             context.params['ep'] = hist['close'][-1]
             context.params['longStopPrice'] = hist['close'][-1]
-            # print(context.params['longStopPrice'])
-            
+                        
     else:
         # print(context.params['longStopPrice'])
         if hist['close'][-1] < hist['ema_103'][-1]:
