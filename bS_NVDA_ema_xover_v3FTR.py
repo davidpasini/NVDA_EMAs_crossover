@@ -9,6 +9,12 @@
 
     LOG:
     Added Trailing Stoploss logic
+    
+    To run live this script, comment all context.flag and uncomment the order placements
+    Note: this strategy is still nor viable for live deployment as the conditions 
+    are met several time within a single candle because they are checked every minute
+
+    Next improvement: have the script execute only every 30 minutes
 
 """
 # Imports
