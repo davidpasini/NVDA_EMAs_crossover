@@ -1,10 +1,20 @@
-# -*- coding: utf-8 -*-
-#To run live this script, comment all context.flag and uncomment the order placements
 
-# Note: this strategy is still nor viable for live deployment as the conditions 
-# are met several time within a single candle because they are checked every minute
-
-# Next improvement: have the script execute only every 30 minutes
+"""
+    Title: NVDA 200-103-20 30 mins EMA crossover 
+    Description: This is a long only strategy which buys on EMA20 
+    crossover EMA103 if close is already above EMA200; The position is 
+    closed based on EMA20 crossunder EMA103 or through stoplosses.
+    
+    Asset class: Equities
+    
+    Last LOG:
+    Added Trailing Stoploss logic
+    
+    To run live this script, comment all context.flag and uncomment the order placements
+    Note: this strategy is still nor viable for live deployment as the conditions 
+    are met several time within a single candle because they are checked every minute
+    Next improvement: have the script execute only every 30 minutes
+"""
 
 def initialize(context):
     context.flag = False
